@@ -51,7 +51,7 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">Our Services</h3>
             <ul className="space-y-3">
-              <li><Link href="/catalog/aquaculture" className="hover:text-green-700">Aquaculture</Link></li>
+              <li><Link href="/catalog/agricultural support" className="hover:text-green-700">Agricultural Support</Link></li>
               <li><Link href="/catalog/livestock" className="hover:text-green-700">Premium Livestock</Link></li>
               <li><Link href="/catalog/produce" className="hover:text-green-700">Organic Produce</Link></li>
               <li><Link href="/projects" className="hover:text-green-700">Consultation</Link></li>
