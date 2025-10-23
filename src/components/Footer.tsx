@@ -5,11 +5,12 @@ import Image from 'next/image';
 import { FaInstagram, FaFacebook, FaTiktok, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
+  
   const socialLinks = [
-    { icon: <FaInstagram className="h-6 w-6" />, href: '#' },
-    { icon: <FaFacebook className="h-6 w-6" />, href: '#' },
-    { icon: <FaTiktok className="h-6 w-6" />, href: '#' },
-    { icon: <FaLinkedin className="h-6 w-6" />, href: '#' },
+    { icon: <FaInstagram className="h-6 w-6" />, href: 'https://www.instagram.com/camatrust_farms?igsh=MWc0YjI3bTRxbnF5cg==' },
+    { icon: <FaFacebook className="h-6 w-6" />, href: 'https://www.facebook.com/share/17HesSYoZh/' },
+    { icon: <FaTiktok className="h-6 w-6" />, href: 'https://www.tiktok.com/@camatrust.farms?_t=ZM-90N2vviCqWe&_r=1' },
+    { icon: <FaLinkedin className="h-6 w-6" />, href: 'https://www.linkedin.com/company/camatrust-farms/' },
   ];
 
   return (
@@ -18,11 +19,12 @@ const Footer = () => {
         {/* Top section: Columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           
+          {/* Logo & About */}
           <div className="md:col-span-2 lg:col-span-1">
             <Image
               src="/logo.png"
               alt="CamaTrust Farms Logo"
-              width={100}
+              width={80}
               height={35}
               className="mb-4"
             />
@@ -32,25 +34,30 @@ const Footer = () => {
             </p>
           </div>
 
+          {/* Quick Links */}
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">Quick Links</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="hover:text-green-700">Home</a></li>
-              <li><a href="#" className="hover:text-green-700">About Us</a></li>
-              <li><a href="#" className="hover:text-green-700">Gallery</a></li>
-              <li><a href="#" className="hover:text-green-700">Catalog</a></li>
+              <li><a href="/" className="hover:text-green-700">Home</a></li>
+              <li><a href="/about" className="hover:text-green-700">About Us</a></li>
+              <li><a href="/projects" className="hover:text-green-700">Projects</a></li>
+              <li><a href="/gallery" className="hover:text-green-700">Gallery</a></li>
+              <li><a href="/catalog" className="hover:text-green-700">Catalog</a></li>
             </ul>
           </div>
 
+          {/* Our Services */}
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">Our Services</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="hover:text-green-700">Premium Livestock</a></li>
-              <li><a href="#" className="hover:text-green-700">Organic Produce</a></li>
-              <li><a href="#" className="hover:text-green-700">Consultation</a></li>
+              <li><a href="/catalog/aquaculture" className="hover:text-green-700">Agricultural Training</a></li>
+              <li><a href="/catalog/livestock" className="hover:text-green-700">Premium Livestock</a></li>
+              <li><a href="/catalog/produce" className="hover:text-green-700">Organic Produce</a></li>
+              <li><a href="/projects" className="hover:text-green-700">Consultation</a></li>
             </ul>
           </div>
 
+          {/* Column 4: Get in Touch */}
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">Get in Touch</h3>
             <ul className="space-y-3">
@@ -77,6 +84,8 @@ const Footer = () => {
                 <a 
                   key={index} 
                   href={link.href} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
                   className="text-gray-500 hover:text-green-700 transition-colors"
                   aria-label={`Follow us on ${['Instagram', 'Facebook', 'TikTok', 'LinkedIn'][index]}`}
                 >
@@ -87,6 +96,7 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Bottom Bar: Copyright */}
         <div className="border-t border-gray-200 mt-16 pt-8 text-sm text-gray-500 flex flex-col md:flex-row md:justify-center items-center">
           <p>
             &copy; {new Date().getFullYear()} CamaTrust Farms. All rights reserved.
