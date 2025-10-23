@@ -2,7 +2,7 @@ import React from 'react';
 
 const SectionCurve = () => {
   return (
-    // You can adjust the height here with h-16, h-20, h-24 etc.
+    
     <div className="relative w-full h-20 md:h-24 overflow-hidden -mb-1">
       <svg
         className="absolute bottom-0 left-0 w-full h-full"

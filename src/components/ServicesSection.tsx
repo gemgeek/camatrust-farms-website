@@ -5,6 +5,11 @@ import { motion } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 
+const sectionVariants = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: { opacity: 1, scale: 1 },
+};
+
 const ChevronLeftIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
 );
@@ -13,11 +18,6 @@ const ChevronRightIcon = () => (
 );
 
 const services = [
-  {
-    title: "Aquaculture",
-    description: "Sustainable catfish farming, delivering fresh, high-quality, and responsibly raised products.",
-    imageUrl: "/aquaculture.png" 
-  },
   {
     title: "Premium Livestock",
     description: "Ethically raised livestock to meet your needs for high-quality meat and dairy products.",
@@ -53,27 +53,28 @@ const cardVariants = {
 const ServicesSection = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, align: 'start' }, 
-    [Autoplay({ delay: 4000, stopOnInteraction: false })] 
+    [Autoplay({ delay: 2000, stopOnInteraction: false })] 
   );
 
   const scrollPrev = () => emblaApi && emblaApi.scrollPrev();
   const scrollNext = () => emblaApi && emblaApi.scrollNext();
 
   return (
-    <section className="bg-white text-gray-900 pb-20 px-4 md:px-12">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-white text-gray-900 py-20 px-4 md:px-12">
+     <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
         <div className="flex justify-between items-center mb-12">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            variants={sectionVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }} 
+            transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-green-800">What we do</h2>
             <p className="mt-4 text-lg text-gray-600 max-w-2xl">
-              We specialize in a diverse range of farm-fresh produce, livestock, and aquaculture to foster a healthier food system.
+              We specialize in a diverse range of farm-fresh produce and livestock to foster a healthier food system.
             </p>
           </motion.div>
 

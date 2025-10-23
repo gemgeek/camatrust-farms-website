@@ -2,7 +2,12 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import { usePathname } from 'next/navigation';
+import { FaInstagram, FaFacebook, FaTiktok, FaLinkedin } from 'react-icons/fa';
+import { useCart } from '@/context/CartContext';
+
 
 const CartIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -22,45 +27,87 @@ const CloseIcon = () => (
   </svg>
 );
 
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  
+
+  const { cartItems } = useCart();
+  const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+
+  const isHome = pathname === '/';
+
+  
+  const navPosition = isHome ? 'absolute' : 'relative';
+  const navBg = isHome ? 'bg-transparent' : 'bg-white shadow-md';
+  const navTextColor = isHome ? 'text-white' : 'text-gray-800';
+  const hoverBg = isHome ? 'hover:bg-white/10' : 'hover:bg-gray-100';
+  const hoverText = 'hover:text-green-600';
 
   return (
     <>
       <motion.nav
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="absolute top-0 left-0 w-full z-50 py-4 px-6 md:px-12 flex justify-between items-center bg-transparent"
+        className={`${navPosition} ${navBg} ${navTextColor} top-0 left-0 w-full z-50 py-4 px-6 md:px-12 flex justify-between items-center transition-all duration-300`}
       >
         {/* Logo */}
-        <div>
-          <Image src="/logo.png" alt="CamaTrust Farms Logo" width={60} height={40} priority />
-        </div>
+        <Link href="/">
+          <Image src="/logo.png" alt="CamaTrust Farms Logo" width={80} height={30} priority />
+        </Link>
 
         {/* Desktop Navigation Links */}
         <ul className="hidden md:flex items-center space-x-8 font-medium">
-          <li><a href="#" className="py-2 px-4 rounded-full transition-all duration-300 hover:bg-white/10 hover:text-green-300">Home</a></li>
-          <li><a href="#" className="py-2 px-4 rounded-full transition-all duration-300 hover:bg-white/10 hover:text-green-300">About Us</a></li>
-          <li><a href="#" className="py-2 px-4 rounded-full transition-all duration-300 hover:bg-white/10 hover:text-green-300">Gallery</a></li>
-          <li><a href="#" className="py-2 px-4 rounded-full transition-all duration-300 hover:bg-white/10 hover:text-green-300">Catalog</a></li>
+          <li>
+            <Link href="/" className={`py-2 px-4 rounded-full ${hoverBg} ${hoverText} transition-all`}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link href="/about" className={`py-2 px-4 rounded-full ${hoverBg} ${hoverText} transition-all`}>
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link href="/gallery" className={`py-2 px-4 rounded-full ${hoverBg} ${hoverText} transition-all`}>
+              Gallery
+            </Link>
+          </li>
+          <li>
+            <Link href="/catalog" className={`py-2 px-4 rounded-full ${hoverBg} ${hoverText} transition-all`}>
+              Catalog
+            </Link>
+          </li>
         </ul>
 
         {/* Desktop Cart Icon */}
-        <div className="hidden md:block cursor-pointer hover:text-green-300 transition-colors">
-          <CartIcon />
-        </div>
-        {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center space-x-4">
-          <div className="cursor-pointer hover:text-green-300 transition-colors">
+        <div className={`hidden md:flex items-center space-x-4 ${hoverText} transition-colors`}>
+          <Link href="/cart" className="cursor-pointer relative" aria-label={`View cart with ${totalItems} items`}>
             <CartIcon />
-          </div>
-          <button onClick={() => setIsOpen(true)} className="text-white">
+            {totalItems > 0 && (
+              <span className="absolute -top-2 -right-2 bg-green-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                {totalItems}
+              </span>
+            )}
+          </Link>
+        </div>
+
+        {/* Mobile Buttons Wrapper */}
+        <div className="md:hidden flex items-center space-x-4">
+          <Link href="/cart" className={`cursor-pointer relative ${hoverText} transition-colors`} aria-label={`View cart with ${totalItems} items`}>
+            <CartIcon />
+            {totalItems > 0 && (
+              <span className="absolute -top-2 -right-2 bg-green-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                {totalItems}
+              </span>
+            )}
+          </Link>
+          <button onClick={() => setIsOpen(true)} className="transition-colors">
             <MenuIcon />
           </button>
         </div>
       </motion.nav>
 
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -77,14 +124,24 @@ const Navbar = () => {
               <CloseIcon />
             </button>
             <ul className="flex flex-col items-center space-y-8 text-green-800 text-2xl font-medium">
-              <li><a href="#" onClick={() => setIsOpen(false)}>Home</a></li>
-              <li><a href="#" onClick={() => setIsOpen(false)}>About Us</a></li>
-              <li><a href="#" onClick={() => setIsOpen(false)}>Gallery</a></li>
-              <li><a href="#" onClick={() => setIsOpen(false)}>Catalog</a></li>
-              <li className="flex items-center space-x-2">
-                <CartIcon />
-                <span>Cart</span>
+              <li><Link href="/" onClick={() => setIsOpen(false)}>Home</Link></li>
+              <li><Link href="/about" onClick={() => setIsOpen(false)}>About Us</Link></li>
+              <li><Link href="/gallery" onClick={() => setIsOpen(false)}>Gallery</Link></li>
+              <li><Link href="/catalog" onClick={() => setIsOpen(false)}>Catalog</Link></li>
+              
+              {/* Mobile Menu Cart */}
+              <li>
+                <Link href="/cart" onClick={() => setIsOpen(false)} className="flex items-center space-x-2">
+                  <CartIcon />
+                  <span>Cart</span>
+                  {totalItems > 0 && (
+                    <span className="ml-2 bg-green-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                      {totalItems}
+                    </span>
+                  )}
+                </Link>
               </li>
+            
             </ul>
           </motion.div>
         )}
