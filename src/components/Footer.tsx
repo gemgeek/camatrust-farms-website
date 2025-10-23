@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { FaInstagram, FaFacebook, FaTiktok, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
@@ -38,11 +39,11 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">Quick Links</h3>
             <ul className="space-y-3">
-              <li><a href="/" className="hover:text-green-700">Home</a></li>
-              <li><a href="/about" className="hover:text-green-700">About Us</a></li>
-              <li><a href="/projects" className="hover:text-green-700">Projects</a></li>
-              <li><a href="/gallery" className="hover:text-green-700">Gallery</a></li>
-              <li><a href="/catalog" className="hover:text-green-700">Catalog</a></li>
+              <li><Link href="/" className="hover:text-green-700">Home</Link></li>
+              <li><Link href="/about" className="hover:text-green-700">About Us</Link></li>
+              <li><Link href="/projects" className="hover:text-green-700">Projects</Link></li>
+              <li><Link href="/gallery" className="hover:text-green-700">Gallery</Link></li>
+              <li><Link href="/catalog" className="hover:text-green-700">Catalog</Link></li>
             </ul>
           </div>
 
@@ -50,14 +51,14 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">Our Services</h3>
             <ul className="space-y-3">
-              <li><a href="/catalog/aquaculture" className="hover:text-green-700">Agricultural Training</a></li>
-              <li><a href="/catalog/livestock" className="hover:text-green-700">Premium Livestock</a></li>
-              <li><a href="/catalog/produce" className="hover:text-green-700">Organic Produce</a></li>
-              <li><a href="/projects" className="hover:text-green-700">Consultation</a></li>
+              <li><Link href="/catalog/aquaculture" className="hover:text-green-700">Aquaculture</Link></li>
+              <li><Link href="/catalog/livestock" className="hover:text-green-700">Premium Livestock</Link></li>
+              <li><Link href="/catalog/produce" className="hover:text-green-700">Organic Produce</Link></li>
+              <li><Link href="/projects" className="hover:text-green-700">Consultation</Link></li>
             </ul>
           </div>
 
-          {/* Column 4: Get in Touch */}
+          {/* Get in Touch */}
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">Get in Touch</h3>
             <ul className="space-y-3">

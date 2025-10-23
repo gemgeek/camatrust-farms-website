@@ -25,7 +25,7 @@ export default function SuccessPage() {
             Your order has been placed successfully.
           </p>
           <p className="mt-2 text-lg text-gray-600">
-            We've received your order and will get back to you soon with delivery details.
+            We&apos;ve received your order and will get back to you soon with delivery details.
           </p>
           <Link href="/catalog" className="mt-10 inline-block bg-green-600 text-white py-3 px-8 rounded-md font-semibold hover:bg-green-700">
             Continue Shopping

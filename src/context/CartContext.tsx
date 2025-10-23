@@ -1,6 +1,7 @@
 "use client";
 
-import React, { createContext, useContext, useState, ReactNode, useCallback } from 'react'; 
+import React, { createContext, useContext, useState, ReactNode, useCallback } from 'react';
+import { Product } from '@/data/products'; 
 
 export interface CartItem {
   id: string;
@@ -12,7 +13,7 @@ export interface CartItem {
 
 interface ICartContext {
   cartItems: CartItem[];
-  addToCart: (product: any, quantity: number) => void;
+  addToCart: (product: Product, quantity: number) => void; 
   removeFromCart: (productId: string) => void;
   updateQuantity: (productId: string, newQuantity: number) => void;
   getCartTotal: () => number;
@@ -24,8 +25,7 @@ const CartContext = createContext<ICartContext | null>(null);
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
-
-  const addToCart = useCallback((product: any, quantity: number) => {
+  const addToCart = useCallback((product: Product, quantity: number) => { 
     setCartItems((prevItems) => {
       const existingItem = prevItems.find((item) => item.id === product.id);
       if (existingItem) {
@@ -50,7 +50,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   const removeFromCart = useCallback((productId: string) => {
-    setCartItems((prevItems) => 
+    setCartItems((prevItems) =>
       prevItems.filter((item) => item.id !== productId)
     );
   }, []);
@@ -65,25 +65,24 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         )
       );
     }
-  }, [removeFromCart]); 
+  }, [removeFromCart]);
 
   const getCartTotal = useCallback(() => {
     return cartItems.reduce(
       (total, item) => total + item.price * item.quantity,
       0
     );
-  }, [cartItems]); 
+  }, [cartItems]);
 
   const clearCart = useCallback(() => {
     setCartItems([]);
   }, []);
 
-
   return (
-    <CartContext.Provider 
-      value={{ 
-        cartItems, 
-        addToCart, 
+    <CartContext.Provider
+      value={{
+        cartItems,
+        addToCart,
         removeFromCart,
         updateQuantity,
         getCartTotal,

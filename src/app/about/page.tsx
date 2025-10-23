@@ -115,7 +115,7 @@ export default function AboutPage() {
                 Our Products and Services
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
-                CamaTrust Farms specializes in a diverse range of farm-fresh produce, including organic vegetables, fruits, and herbs. Our premium livestock meets our clients' needs for poultry and dairy, and our frozen foods division focuses on providing fresh meats and seafoods you can trust.
+                CamaTrust Farms specializes in a diverse range of farm-fresh produce, including organic vegetables, fruits, and herbs. Our premium livestock meets our clients&apos; needs for poultry and dairy, and our frozen foods division focuses on providing fresh meats and seafoods you can trust.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mt-4">
                 Our services also extend to personalized farming consultations, sustainable agricultural training, backyard gardening, and support, empowering farmers with the knowledge to implement eco-friendly practices.
