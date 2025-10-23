@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CamaTrust Farms Website
 
-## Getting Started
+![CamaTrust Farms Logo](public/logo.png) 
 
-First, run the development server:
+## 🚜 About The Project
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This repository contains the code for the official website of CamaTrust Farms. It's a modern, responsive website built to showcase the farm's products, services, and commitment to sustainable agriculture. The site includes a full product catalog with e-commerce functionality (add to cart, checkout via email).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Live Site:** [https://camatrustfarms.com](https://camatrustfarms.com) 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✨ Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* **Responsive Design:** Looks great on desktops, tablets, and mobile phones.
+* **Modern UI/UX:** Smooth animations, clean layout, and intuitive navigation.
+* **Product Catalog:** Browse products by category (Meats, Poultry, Fish, Vegetables).
+* **Individual Product Pages:** Detailed view with image, description, and quantity selection.
+* **Shopping Cart:** Add/remove/update items.
+* **Email Checkout:** Submitting the checkout form sends order details directly to the farm's email via Resend.
+* **Project Showcase:** Highlights specific farm projects and initiatives.
+* **Gallery:** Displays images and videos from the farm.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Built With
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* **Framework:** [Next.js](https://nextjs.org/) (App Router)
+* **Language:** [TypeScript](https://www.typescriptlang.org/)
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+* **Animation:** [Framer Motion](https://www.framer.com/motion/)
+* **Icons:** [React Icons](https://react-icons.github.io/react-icons/)
+* **Email Sending:** [Resend](https://resend.com/)
+* **Deployment:** [Vercel](https://vercel.com/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🚀 Getting Started
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To get a local copy up and running, follow these simple steps.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Prerequisites
+
+* Node.js (v18 or later recommended)
+* npm or yarn
+
+### Installation
+
+1.  **Clone the repo:**
+    ```bash
+    git clone [https://github.com/gemgeek/camatrust-farms-website.git](https://github.com/gemgeek/camatrust-farms-website.git)
+    ```
+    *(Replace `gemgeek/camatrust-farms-website.git` with your actual GitHub repository URL)*
+2.  **Navigate into the project folder:**
+    ```bash
+    cd camatrust-farms-website
+    ```
+3.  **Install NPM packages:**
+    ```bash
+    npm install
+    ```
+4.  **Set up Environment Variables:**
+    * Create a file named `.env.local` in the root directory.
+    * Add your Resend API key:
+      ```.env.local
+      RESEND_API_KEY=YOUR_RESEND_API_KEY
+      ```
+5.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+6.  Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+---
+
+## 🌐 Deployment
+
+This site is automatically deployed via [Vercel](https://vercel.com/) whenever changes are pushed to the `main` branch.
+
+**Required Environment Variable on Vercel:**
+* `RESEND_API_KEY`: Your Resend API key must be added in the Vercel project settings.
+
+---
