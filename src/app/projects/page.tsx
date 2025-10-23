@@ -42,7 +42,7 @@ const projects = [
     title: 'Plantain Plantation Development',
     description:
       'An upcoming large-scale plantain plantation designed to support food security, create local employment, and promote organic farming methods in Ghana.',
-    imageUrl: '/Plantain-farm.png',
+    imageUrl: '/plantain-farm.png',
     category: 'Crop Farming',
     status: 'Upcoming', 
   },
