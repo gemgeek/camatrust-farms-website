@@ -5,10 +5,9 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import SectionCurve from '@/components/SectionCurve'; // For the header
+import SectionCurve from '@/components/SectionCurve'; 
 
 export default function ServicesPage() {
-  // Simple animation variant for sections
   const sectionVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -19,7 +18,7 @@ export default function ServicesPage() {
       <Navbar />
       <div className="bg-white text-gray-800">
 
-        {/* --- Page Header (Green with Curve) --- */}
+        {/* Page Header */}
         <div className="relative bg-green-900 text-white">
           <div className="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -41,12 +40,12 @@ export default function ServicesPage() {
           </div>
         </div>
 
-        {/* --- Main Content Area --- */}
-        <div className="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8 space-y-24"> {/* Added space-y-24 */}
+        {/* Main Content Area */}
+        <div className="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8 space-y-24"> 
 
-          {/* --- Service 1: Agricultural Support --- */}
+          {/* Agricultural Support */}
           <motion.section 
-            id="agricultural-support" // <-- CHANGED ID
+            id="agricultural-support" 
             className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center scroll-mt-20" 
             variants={sectionVariants}
             initial="hidden"
@@ -54,15 +53,14 @@ export default function ServicesPage() {
             viewport={{ once: true, amount: 0.2 }}
           >
             <div className="order-2 md:order-1">
-              <h2 className="text-3xl font-bold text-green-800 mb-4">Agricultural Support</h2> {/* <-- CHANGED TITLE */}
+              <h2 className="text-3xl font-bold text-green-800 mb-4">Agricultural Support</h2> 
               <p className="text-lg text-gray-700 leading-relaxed">
-                {/* --- UPDATED TEXT --- */}
                 We provide comprehensive agricultural support services, including personalized consultations and hands-on training. We empower farmers and enthusiasts with the knowledge to implement sustainable and effective practices for success.
-                {/* -------------------- */}
+                
               </p>
             </div>
             <div className="order-1 md:order-2 aspect-video relative rounded-lg overflow-hidden shadow-md">
-               {/* --- UPDATED IMAGE (using community farm image as example) --- */}
+               
                <Image src="/community-farm.png" alt="Agricultural Support" fill className="object-cover"/> 
             </div>
           </motion.section>
@@ -101,7 +99,7 @@ export default function ServicesPage() {
              <div>
               <h2 className="text-3xl font-bold text-green-800 mb-4">Premium Livestock</h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Our premium livestock, raised with a focus on ethical practices, meets our clients' needs for high-quality meat and dairy products. We ensure healthy living conditions and nutritious feed for all our animals.
+                Our premium livestock, raised with a focus on ethical practices, meets our clients&apos; needs for high-quality meat and dairy products. We ensure healthy living conditions and nutritious feed for all our animals.
               </p>
             </div>
           </motion.section>
