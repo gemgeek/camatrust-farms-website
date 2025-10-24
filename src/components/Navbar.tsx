@@ -71,7 +71,7 @@ const Navbar = () => {
             <li><Link href="/about" className={`py-2 px-4 rounded-full ${hoverBg} ${hoverText} transition-all`}>About Us</Link></li>
             <li><Link href="/projects" className={`py-2 px-4 rounded-full ${hoverBg} ${hoverText} transition-all`}>Projects</Link></li>
             <li><Link href="/gallery" className={`py-2 px-4 rounded-full ${hoverBg} ${hoverText} transition-all`}>Gallery</Link></li>
-            <li><Link href="/catalog" className={`py-2 px-4 rounded-full ${hoverBg} ${hoverText} transition-all`}>Catalog</Link></li>
+            <li><Link href="/catalog" className={`py-2 px-4 rounded-full ${hoverBg} ${hoverText} transition-all`}>Market</Link></li>
           </ul>
         </div>
 
@@ -183,7 +183,7 @@ const Navbar = () => {
               <li><Link href="/about" onClick={() => setIsOpen(false)}>About Us</Link></li>
               <li><Link href="/projects" onClick={() => setIsOpen(false)}>Projects</Link></li>
               <li><Link href="/gallery" onClick={() => setIsOpen(false)}>Gallery</Link></li>
-              <li><Link href="/catalog" onClick={() => setIsOpen(false)}>Catalog</Link></li>
+              <li><Link href="/catalog" onClick={() => setIsOpen(false)}>Market</Link></li>
               
               <li>
                 <Link href="/cart" onClick={() => setIsOpen(false)} className="flex items-center space-x-2">

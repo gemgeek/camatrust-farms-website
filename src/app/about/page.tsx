@@ -90,7 +90,7 @@ export default function AboutPage() {
               transition={{ duration: 0.7 }}
             >
               <Image
-                src="/produce.png" 
+                src="/happyharvester.png" 
                 alt="Organic Produce"
                 width={600}
                 height={600}

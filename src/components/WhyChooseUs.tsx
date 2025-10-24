@@ -98,7 +98,7 @@ const WhyChooseUs = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <img
-              src="/harvesting.png"
+              src="/harvest1.png"
               alt="CamaTrust Farms"
               className="w-full h-full object-cover"
             />
