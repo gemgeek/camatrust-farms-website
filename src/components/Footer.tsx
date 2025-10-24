@@ -51,7 +51,7 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">Our Services</h3>
             <ul className="space-y-3">
-              <li>Aquaculture</li>
+              <li>Agricultural Support</li>
               <li>Premium Livestock</li>
               <li>Organic Produce</li>
               <li>Consultation</li> 
