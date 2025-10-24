@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname, useRouter } from 'next/navigation';
-import { FaInstagram, FaFacebook, FaTiktok, FaLinkedin, FaSearch } from 'react-icons/fa';
+import { FaSearch } from 'react-icons/fa'; 
 import { useCart } from '@/context/CartContext';
 
 const CartIcon = () => (
@@ -64,12 +64,12 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Desktop Navigation Links (Center) */}
+        {/* Desktop Navigation Links */}
         <div className="hidden md:flex flex-1 justify-center"> 
           <ul className="flex items-center space-x-8 font-medium">
             <li><Link href="/" className={`py-2 px-4 rounded-full ${hoverBg} ${hoverText} transition-all`}>Home</Link></li>
             <li><Link href="/about" className={`py-2 px-4 rounded-full ${hoverBg} ${hoverText} transition-all`}>About Us</Link></li>
-            <Link href="/team" className={`py-2 px-4 rounded-full ${hoverBg} ${hoverText} transition-all`}>Team</Link>
+            <li><Link href="/team" className={`py-2 px-4 rounded-full ${hoverBg} ${hoverText} transition-all`}>Team</Link></li> 
             <li><Link href="/projects" className={`py-2 px-4 rounded-full ${hoverBg} ${hoverText} transition-all`}>Projects</Link></li>
             <li><Link href="/gallery" className={`py-2 px-4 rounded-full ${hoverBg} ${hoverText} transition-all`}>Gallery</Link></li>
             <li><Link href="/catalog" className={`py-2 px-4 rounded-full ${hoverBg} ${hoverText} transition-all`}>Market</Link></li>
@@ -135,7 +135,7 @@ const Navbar = () => {
         </div>
       </motion.nav>
 
-      {/* Mobile Search Input (Conditional) */}
+      {/* Mobile Search Input */}
       <AnimatePresence>
         {showSearch && (
           <motion.div

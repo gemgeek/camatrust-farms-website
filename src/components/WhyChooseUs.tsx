@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image'; 
 import { motion } from 'framer-motion';
 
 const sectionVariants = {
@@ -84,27 +85,29 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="bg-white text-gray-900 py-20 px-4 md:px-12">
-      <div className="max-w-7xl mx-auto w-full">
+    <section className="bg-white text-gray-900 py-20 px-4 md:px-12"> 
+     <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           
           {/* Image Column (Left) */}
           <motion.div
-            className="w-full h-80 md:h-[32rem] rounded-2xl shadow-lg overflow-hidden"
+            className="w-full h-80 md:h-[32rem] rounded-2xl shadow-lg overflow-hidden relative" 
             variants={sectionVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <img
+            <Image
               src="/happyharvest.png"
               alt="CamaTrust Farms"
+              fill 
               className="w-full h-full object-cover"
+              unoptimized={true} 
             />
           </motion.div>
 
-          {/* Text Column (Right) */}
+          {/* Text Column */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -115,7 +118,7 @@ const WhyChooseUs = () => {
               Why Choose CamaTrust Farms?
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              We are not just a farm; we are a reliable partner in fostering a 
+              We are not just a farm; we are a reliable partner in fostering a
               healthier and more sustainable food system.
             </p>
 

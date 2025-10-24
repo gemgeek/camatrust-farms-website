@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image'; 
 import { motion } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
@@ -26,7 +27,7 @@ const services = [
   {
     title: "Organic Produce",
     description: "A diverse range of farm-fresh organic vegetables, fruits, and herbs, cultivated with care.",
-    imageUrl: "/farm-produce.png" 
+    imageUrl: "/farm-produce.png"
   },
   {
   title: "Frozen Meat & Seafood Supply",
@@ -52,25 +53,25 @@ const cardVariants = {
 
 const ServicesSection = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: 'start' }, 
-    [Autoplay({ delay: 2000, stopOnInteraction: false })] 
+    { loop: true, align: 'start' },
+    [Autoplay({ delay: 2000, stopOnInteraction: false })]
   );
 
   const scrollPrev = () => emblaApi && emblaApi.scrollPrev();
   const scrollNext = () => emblaApi && emblaApi.scrollNext();
 
   return (
-    <section className="bg-white text-gray-900 py-20 px-4 md:px-12">
+    <section className="bg-white text-gray-900 py-20 px-4 md:px-12"> 
      <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
         <div className="flex justify-between items-center mb-12">
           <motion.div
-            variants={sectionVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }} 
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
+            variants={cardVariants} 
           >
             <h2 className="text-3xl md:text-4xl font-bold text-green-800">What we do</h2>
             <p className="mt-4 text-lg text-gray-600 max-w-2xl">
@@ -80,14 +81,14 @@ const ServicesSection = () => {
 
           <div className="hidden md:flex space-x-2">
             <button
-              onClick={scrollPrev} 
+              onClick={scrollPrev}
               className="bg-gray-200 p-2 rounded-full hover:bg-gray-300 transition-colors"
               aria-label="Scroll left"
             >
               <ChevronLeftIcon />
             </button>
             <button
-              onClick={scrollNext} 
+              onClick={scrollNext}
               className="bg-gray-200 p-2 rounded-full hover:bg-gray-300 transition-colors"
               aria-label="Scroll right"
             >
@@ -97,7 +98,7 @@ const ServicesSection = () => {
         </div>
 
         <div className="embla" ref={emblaRef}>
-          <motion.div 
+          <motion.div
             className="embla__container"
             variants={cardVariants}
             initial="hidden"
@@ -110,7 +111,13 @@ const ServicesSection = () => {
                 <div
                   className="group relative flex-shrink-0 w-80 h-[28rem] rounded-2xl overflow-hidden shadow-lg"
                 >
-                  <img src={service.imageUrl} alt={service.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                  <Image 
+                    src={service.imageUrl} 
+                    alt={service.title} 
+                    fill 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                    unoptimized={true} 
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                   <div className="absolute bottom-0 left-0 p-6 text-white">
                     <h3 className="text-2xl font-bold">{service.title}</h3>
