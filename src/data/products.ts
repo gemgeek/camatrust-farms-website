@@ -27,8 +27,8 @@ export const CATEGORIES: Category[] = [
 export const PRODUCTS: Product[] = [
   // == MEATS ==
   { id: 'cow-meat', name: 'Cow Meat', category: 'meats', price: 0, description: 'Fresh, high-quality cow meat.', image: '/cow-meat.png', thumbnails: [] },
-  { id: 'goat-meat', name: 'Goat Meat', category: 'meats', price: 0, description: 'Fresh, high-quality goat meat.', image: '/goat-meat.png', thumbnails: [] },
-  { id: 'grasscutter', name: 'Grasscutter', category: 'meats', price: 0, description: 'Fresh, high-quality grasscutter.', image: '/grasscutter.png', thumbnails: [] },
+  { id: 'goat-meat', name: 'Goat Meat', category: 'meats', price: 0, description: 'Fresh, high-quality goat meat.', image: '/goat-meat1.png', thumbnails: [] },
+  { id: 'grasscutter', name: 'Grasscutter', category: 'meats', price: 0, description: 'Fresh, high-quality grasscutter.', image: '/grasscutter1.png', thumbnails: [] },
   { id: 'snail', name: 'Snail', category: 'meats', price: 0, description: 'Fresh, high-quality snail.', image: '/snail.png', thumbnails: [] },
   { id: 'pork', name: 'Pork', category: 'meats', price: 0, description: 'Fresh, high-quality pork.', image: '/pork.png', thumbnails: [] },
 

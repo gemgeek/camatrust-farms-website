@@ -69,6 +69,7 @@ const Navbar = () => {
           <ul className="flex items-center space-x-8 font-medium">
             <li><Link href="/" className={`py-2 px-4 rounded-full ${hoverBg} ${hoverText} transition-all`}>Home</Link></li>
             <li><Link href="/about" className={`py-2 px-4 rounded-full ${hoverBg} ${hoverText} transition-all`}>About Us</Link></li>
+            <Link href="/team" className={`py-2 px-4 rounded-full ${hoverBg} ${hoverText} transition-all`}>Team</Link>
             <li><Link href="/projects" className={`py-2 px-4 rounded-full ${hoverBg} ${hoverText} transition-all`}>Projects</Link></li>
             <li><Link href="/gallery" className={`py-2 px-4 rounded-full ${hoverBg} ${hoverText} transition-all`}>Gallery</Link></li>
             <li><Link href="/catalog" className={`py-2 px-4 rounded-full ${hoverBg} ${hoverText} transition-all`}>Market</Link></li>
@@ -181,6 +182,7 @@ const Navbar = () => {
             <ul className="flex flex-col items-center space-y-8 text-green-800 text-2xl font-medium">
               <li><Link href="/" onClick={() => setIsOpen(false)}>Home</Link></li>
               <li><Link href="/about" onClick={() => setIsOpen(false)}>About Us</Link></li>
+              <li><Link href="/team" onClick={() => setIsOpen(false)}>Team</Link></li>
               <li><Link href="/projects" onClick={() => setIsOpen(false)}>Projects</Link></li>
               <li><Link href="/gallery" onClick={() => setIsOpen(false)}>Gallery</Link></li>
               <li><Link href="/catalog" onClick={() => setIsOpen(false)}>Market</Link></li>

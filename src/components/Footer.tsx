@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaInstagram, FaFacebook, FaTiktok, FaLinkedin } from 'react-icons/fa';
+import { FaInstagram, FaFacebook, FaTiktok, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 
 const Footer = () => {
   
@@ -12,6 +12,7 @@ const Footer = () => {
     { icon: <FaFacebook className="h-6 w-6" />, href: 'https://www.facebook.com/share/17HesSYoZh/' },
     { icon: <FaTiktok className="h-6 w-6" />, href: 'https://www.tiktok.com/@camatrust.farms?_t=ZM-90N2vviCqWe&_r=1' },
     { icon: <FaLinkedin className="h-6 w-6" />, href: 'https://www.linkedin.com/company/camatrust-farms/' },
+    { icon: <FaWhatsapp className="h-6 w-6" />, href: 'https://wa.me/message/V4VJHEPQFUZQP1' },
   ];
 
   return (
@@ -41,6 +42,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li><Link href="/" className="hover:text-green-700">Home</Link></li>
               <li><Link href="/about" className="hover:text-green-700">About Us</Link></li>
+              <li><Link href="/team" className="hover:text-green-700">Team</Link></li>
               <li><Link href="/projects" className="hover:text-green-700">Projects</Link></li>
               <li><Link href="/gallery" className="hover:text-green-700">Gallery</Link></li>
               <li><Link href="/catalog" className="hover:text-green-700">Market</Link></li>
@@ -51,10 +53,10 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">Our Services</h3>
             <ul className="space-y-3">
-              <li>Agricultural Support</li>
-              <li>Premium Livestock</li>
-              <li>Organic Produce</li>
-              <li>Consultation</li> 
+              <li><Link href="/services#agricultural-support" className="hover:text-green-700">Agricultural Support</Link></li>
+              <li><Link href="/services#livestock" className="hover:text-green-700">Premium Livestock</Link></li>
+              <li><Link href="/services#produce" className="hover:text-green-700">Organic Produce</Link></li>
+              <li><Link href="/services#consultation" className="hover:text-green-700">Consultation</Link></li>
             </ul>
           </div>
 
@@ -88,7 +90,7 @@ const Footer = () => {
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="text-gray-500 hover:text-green-700 transition-colors"
-                  aria-label={`Follow us on ${['Instagram', 'Facebook', 'TikTok', 'LinkedIn'][index]}`}
+                  aria-label={`Follow us on ${['Instagram', 'Facebook', 'TikTok', 'LinkedIn', 'WhatsApp'][index]}`}
                 >
                   {link.icon}
                 </a>
