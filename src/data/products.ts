@@ -67,7 +67,7 @@ export const PRODUCTS: Product[] = [
   { id: 'chicken-wings-layer', name: 'Chicken Wings (Layer)', category: 'poultry', price: 62, unit: '1 kg', description: 'Fresh layer chicken wings.', image: '/chicken-wings.png' }, 
   { id: 'chicken-wings-broiler', name: 'Chicken Wings (Broiler)', category: 'poultry', price: 65, unit: '1 kg', description: 'Fresh broiler chicken wings.', image: '/chicken-wings-broiler.png' }, 
 
-  { id: 'guinea-fowl', name: 'Guinea Fowl', category: 'poultry', price: 0, description: 'Fresh, farm-raised guinea fowl.', image: '/guinea-fowl.png' },
+  { id: 'guinea-fowl', name: 'Guinea Fowl', category: 'poultry', price: 250, description: 'Fresh, farm-raised guinea fowl.', image: '/guinea-fowl.png' },
   { 
     id: 'turkey', 
     name: 'Turkey', 
