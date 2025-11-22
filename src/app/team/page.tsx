@@ -13,11 +13,6 @@ const teamMembers = [
     title: 'Co-Founder & Farm Operations Manager',
     imageUrl: '/ceo-picture.jpg', 
   },
-  {
-    name: 'Matilda Esenam Gbeve', 
-    title: 'Agri-Tech Innovation Manager',
-    imageUrl: '/itsupport.png', 
-  },
 ];
 
 export default function TeamPage() {
